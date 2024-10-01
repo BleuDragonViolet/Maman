@@ -1,0 +1,381 @@
+/* Styles de base */
+body {
+    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-image: url('image/font.jpeg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+}
+
+/* Navigation fixe avec fond transparent flou */
+nav {
+    position: fixed;              /* Fixe la navigation en haut de la page */
+    top: 0;                       /* Le positionne en haut de la fenêtre */
+    width: 100%;                  /* Prend toute la largeur */
+    background: rgba(255, 255, 255, 0.1);  /* Fond blanc semi-transparent */
+    border-bottom: 2px solid white; /* Contour blanc en bas de la navigation */
+    padding: 15px 0;
+    z-index: 1000;                /* S'assure que le menu est au-dessus de tout */
+    backdrop-filter: blur(10px);  /* Effet de flou sur le fond */
+    -webkit-backdrop-filter: blur(10px);  /* Support pour Webkit */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);  /* Ombre douce en bas de la bannière */
+}
+
+/* Ajustement pour les liens de navigation */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;                  /* Texte blanc pour la lisibilité */
+    text-transform: uppercase;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;           /* Ajout d'espacement pour le confort de navigation */
+}
+
+/* Header */
+header {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 60px;  /* Ajustement pour compenser la navigation fixe */
+}
+
+.hero {
+    z-index: 1;
+}
+
+.hero img {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    max-width: 600px;
+}
+
+/* Section Services */
+#services {
+    padding: 60px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);  /* Fond blanc semi-transparent */
+    border: 2px solid white; /* Contour blanc */
+    border-radius: 15px;
+    margin: 30px 15px;
+    color: #333;
+    backdrop-filter: blur(10px);  /* Effet de flou */
+    -webkit-backdrop-filter: blur(10px);  /* Support Webkit */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);  /* Ombre légère */
+}
+
+/* Mise en page en grille pour les services */
+
+
+.service {
+    background-color: rgba(255, 255, 255, 0.9);  /* Fond blanc semi-transparent */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  /* Ombre douce */
+    color: #333;
+    text-align: left;  /* Aligne le texte à gauche */
+}
+
+.service h3 {
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.service p {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+/* Section About et Contact */
+section {
+    padding: 60px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);  /* Fond blanc semi-transparent */
+    border: 2px solid white; /* Contour blanc */
+    border-radius: 15px;
+    margin: 30px 15px;
+    color: #333;
+    backdrop-filter: blur(10px);  /* Ajoute un effet de flou */
+    -webkit-backdrop-filter: blur(10px);  /* Support pour Webkit */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);  /* Ombre légère pour donner de la profondeur */
+}
+
+/* Styles des titres */
+h2 {
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Section Contact */
+#contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="numero"], textarea {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+textarea {
+    height: 150px;
+}
+
+/* Style pour le bouton de bascule */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* Par défaut : 3 colonnes */
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Empiler les services en une colonne sur petits écrans */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;  /* Empilement en 1 colonne */
+    }
+}
+
+/* Transition fluide pour l'ouverture/fermeture des détails des services */
+.service-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
+    opacity: 0;
+}
+
+.service-content.show {
+    max-height: 1000px; /* Ajuster selon le contenu, 1000px pour beaucoup de texte */
+    opacity: 1;
+}
+
+/* Bouton toggle service */
+button.toggle-service {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    text-align: center;
+    display: block;
+    margin: 10px auto;
+}
+
+/* Supprimer le focus du bouton */
+button.toggle-service:focus {
+    outline: none;
+}
+
+.BUTTONEN {
+    background-color: transparent;
+    border: white;   
+    font-size: 1.5em;
+    cursor: pointer;
+    border-top: 2px solid white;
+}
+
+
+/* Footer fixe avec fond transparent flou */
+footer {
+    position: fixed;              /* Fixe le footer en bas */
+    bottom: 0;                    /* Le positionne en bas de la page */
+    width: 100%;                  /* Le fait occuper toute la largeur */
+    background: rgba(255, 255, 255, 0.1);  /* Fond blanc semi-transparent */
+    border-top: 2px solid white;  /* Contour blanc */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    backdrop-filter: blur(10px);  /* Effet de flou sur le fond */
+    -webkit-backdrop-filter: blur(10px);  /* Support pour Webkit */
+    box-shadow: 0px -2px 15px rgba(0, 0, 0, 0.2); /* Ombre douce en haut du footer */
+    z-index: 1000;                /* S'assure que le footer est toujours au-dessus */
+}
+
+.rotate-animation {
+    animation: rotate 2s ease-in-out forwards;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(1800deg); /* 5 tours (5 * 360 = 1800) */
+    }
+}
+
+/* État caché initial */
+.hidden {
+    opacity: 0;
+    transform: translateY(50px); /* Décalé vers le bas pour l'effet de déplacement */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition fluide */
+}
+
+/* État visible avec l'animation */
+.visible {
+    opacity: 1;
+    transform: translateY(0); /* Remonte progressivement */
+}
+
+.logo-image {
+    border-radius: 10%;
+}
+
+/* Styles pour les téléphones (écrans de moins de 600px de large) */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    nav ul {
+        flex-direction: column; /* Empile les liens de navigation verticalement */
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero img {
+        width: 100px;
+    }
+
+    #services {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .service {
+        padding: 10px;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    input[type="text"], input[type="email"], input[type="numero"], textarea {
+        width: 100%; /* Prend toute la largeur sur petit écran */
+    }
+
+    button.toggle-service {
+        font-size: 1.2em;
+    }
+}
+
+/* Container pour les images */
+.comparison-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid white;
+    border-radius: 15px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.image-box {
+    position: relative;
+    text-align: center;
+    width: 45%; /* Ajuste la taille des images */
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.label-avant, .label-apres {
+    position: absolute;
+    top: -25px; /* Ajuste la hauteur du texte */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.label-avant {
+    color: red;
+}
+
+.label-apres {
+    color: green;
+}
+
+/* Styles pour le modal d'image */
+#image-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#modal-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+#close-modal {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 3em;
+    color: white;
+    cursor: pointer;
+}

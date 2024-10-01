@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jolie Tombe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="home">
+        <nav>
+            <ul>
+                <li><a href="#services">Prestations</a></li>
+                <li><a href="#about">À propos</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="hero">
+            <img src="image/logo Jolie tombe.png" alt="Logo Jolie Tombe" class="logo-image">
+            <h1>Jolie Tombe</h1>
+            <p>Des services d'entretien dignes pour honorer la mémoire de vos proches.</p>
+        </div>
+    </header>
+
+    <section id="services">
+        <h2>Nos Prestations d'Exception</h2>
+        <div class="services-grid">
+            <div class="service">
+                <h3>🌸 Entretien avec Fleurissement <strong>95€</strong></h3>
+                <div class="service-content hidden">
+                    <p><strong>◦ Nettoyage complet de la tombe</strong> (granit 2mx1m):</p>
+                    <p>Prise en charge d’une tombe de granit de 2mX1m pour un entretien manuel. Mise à nu de la tombe, balayage, savonnage, décapage des joints, rinçage et séchage de la pierre et des plaques.</p>
+                    <p>Supplément pour tombe en ciment et pierre calcaire</p>
+                    <p><strong>◦ Désherbage, retrait des fleurs fanées, et arrosage des plantes</strong></p>
+                    <p><strong>◦ Bilan de l’état de la tombe avant/après:</strong></p>
+                    <ul>
+                        <li>Photographie avant/après</li>
+                        <li>Information sur l’état de la sépulture</li>
+                    </ul>
+                </div>
+                <button class="toggle-service">↓</button>
+            </div>
+
+            <div id="image-modal" class="hidden">
+                <span id="close-modal">&times;</span>
+                <img id="modal-image" src="" alt="Zoom Image">
+            </div>
+
+            <div class="service">
+                <h3>✨ Entretien d'une sépulture <strong>70€</strong></h3>
+                <div class="service-content hidden">
+                    <p><strong>◦ Nettoyage complet de la tombe</strong> (granit 2mx1m) :</p>
+                    <p>Prise en charge d’une tombe de granit de 2mX1m pour un entretien manuel. Mise à nu de la tombe, balayage, savonnage, décapage des joints, rinçage et séchage de la pierre et des plaques.</p>
+                    <p>(Supplément pour tombe en ciment et pierre calcaire)</p>
+                    <p><strong>◦ Désherbage, retrait des fleurs fanées, et arrosage des plantes</strong></p>
+                    <p><strong>◦ Bilan de l’état de la tombe avant/après :</strong></p>
+                    <ul>
+                        <li>Photographie avant/après</li>
+                        <li>Information sur l’état de la sépulture</li>
+                    </ul>
+                </div>
+                <button class="toggle-service">↓</button>
+            </div>
+
+            <div class="service">
+                <h3>🌟 Entretien Columbarium <strong>40€</strong></h3>
+                <div class="service-content hidden">
+                    <li>Nettoyage complet</li>
+                    <li>Fleurissement</li>
+                    <li>Photographie avant/après</li>
+                </div>
+                <button class="toggle-service">↓</button>
+            </div>
+
+            <div class="service">
+                <h3>🌱 Entretien Jardinières <strong>35€</strong></h3>
+                <div class="service-content hidden">
+                    <li>Désherbage, retrait des fleurs fanées, rajout de terreau et arrosage des plantes</li>
+                    <li>Fleurissement</li>
+                    <li>Photographie avant/après</li>
+                </div>
+                <button class="toggle-service">↓</button>
+            </div>
+
+            <div class="service">
+                <h3>🌷 Entretien Condoléances <strong>30€</strong></h3>
+                <div class="service-content hidden">
+                    <p>Un passage suivant les obsèques au jour choisi pour retirer les fleurs fanées et les végétaux abîmés, arroser les plantes et balayer la sépulture.</p>
+                </div>
+                <button class="toggle-service">↓</button>
+            </div>
+
+            <div class="service">
+                <h3>🚀 Autres</h3>
+                <div class="service-content hidden">
+                    <li>Fleurissement (fenêtre pour choix)</li>
+                    <li>Entretien tombeau sur devis</li>
+                </div>
+                <button class="toggle-service">↓</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="hidden">
+        <h2>À Propos de Jolie Tombe</h2>
+        <p>Chez <strong>Jolie Tombe</strong>, nous travaillons avec des producteurs locaux et privilégions les fleurs de saison. Nous offrons des services personnalisés pour vous permettre de maintenir l’entretien des sépultures en toute sérénité.</p>
+        <p>Nous intervenons dans une large zone géographique avec des tarifs dégressifs pour plusieurs prestations dans l'année.</p>
+
+        <div class="comparison-container">
+            <div class="image-box">
+                <span class="label-avant">Avant</span>
+                <img src="image/avant.jpg" alt="Image Avant">
+            </div>
+            <div class="image-box">
+                <span class="label-apres">Après</span>
+                <img src="image/apres.jpg" alt="Image Après">
+            </div>
+        </div>
+    </section>
+
+    <div id="image-modal">
+        <span id="close-modal">&times;</span>
+        <img id="modal-image" src="" alt="Zoom Image">
+    </div>
+
+    <section id="contact" class="hidden">
+        <h2>Contactez-nous pour Plus d'Informations</h2>
+        <form id="contact-form">
+            <label for="name">Nom</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Votre Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="numero">Numéro</label>
+            <input type="text" id="numero" name="numero" required pattern="[0-9!@#$%^&*()_+=-]*" title="Veuillez entrer uniquement des chiffres et des caractères spéciaux." maxlength="15">
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit" class="BUTTONEN">Envoyer</button>
+        </form>
+        <p id="status"></p>
+    </section>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("S0_fQNRMi9dgAZgpY");
+        })();
+    
+        function validatePhoneNumber(number) {
+            const regex = /^[0-9\s\-()+]+$/;
+            const digitsOnly = number.replace(/\D/g, '');
+            return regex.test(number) && digitsOnly.length >= 10 && digitsOnly.length <= 12;
+        }
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const numero = document.getElementById('numero').value;
+            if (!validatePhoneNumber(numero)) {
+                document.getElementById('status').innerHTML = "Veuillez entrer un numéro valide (10 à 12 chiffres et caractères spéciaux autorisés).";
+                return;
+            }
+            emailjs.sendForm('service_muvj9ra', 'template_awg8hhc', this)
+                .then(function() {
+                    document.getElementById('status').innerHTML = "Message envoyé avec succès!";
+                    document.getElementById('contact-form').reset();
+                }, function(error) {
+                    document.getElementById('status').innerHTML = "Erreur lors de l'envoi du message.";
+                    console.error('Erreur lors de l\'envoi...', error);
+                });
+        });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Jolie Tombe. Tous droits réservés.</p>
+    </footer>
+    <script src="scripts.js"></script>
+</body>
+</html>
